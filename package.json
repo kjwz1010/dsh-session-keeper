@@ -1,0 +1,36 @@
+{
+  "name": "dsh-session-keeper",
+  "version": "0.1.0",
+  "description": "会话保活（dsh-session-keeper）：DSH 插件。定时检查指定的会话还在不在内存里，不在就 ctx.agents.resume() 把它装回来 —— 这样 QQ 桥那类「只往活着的会话投递」的插件就不会因为目标会话闲置太久而投不进去。不发消息、不开对话轮、不花模型 token。",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "session",
+    "keepalive",
+    "resume"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.1-rc.3"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.1-rc.3"
+  }
+}
