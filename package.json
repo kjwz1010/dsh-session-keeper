@@ -1,7 +1,7 @@
 {
   "name": "dsh-session-keeper",
-  "version": "0.1.0",
-  "description": "会话保活（dsh-session-keeper）：DSH 插件。定时检查指定的会话还在不在内存里，不在就 ctx.agents.resume() 把它装回来 —— 这样 QQ 桥那类「只往活着的会话投递」的插件就不会因为目标会话闲置太久而投不进去。不发消息、不开对话轮、不花模型 token。",
+  "version": "0.2.0",
+  "description": "会话保活（dsh-session-keeper）：DSH 插件。定时检查指定的会话还在不在内存里，不在就 ctx.agents.resume() 把它装回来 —— 这样 QQ 桥那类「只往活着的会话投递」的插件就不会因为目标会话闲置太久而投不进去。不发消息、不开对话轮、不花模型 token。带设置页，可改开关/间隔/目标会话。",
   "license": "MIT",
   "type": "module",
   "keywords": [
@@ -14,6 +14,7 @@
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
+    "./client": "./lib/client.js",
     "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
   },
@@ -28,6 +29,15 @@
     },
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots"
+      ],
+      "external": [
+        "react"
+      ]
     }
   },
   "peerDependencies": {
