@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Keeper",
+    "description": "Periodically checks whether the selected sessions are still loaded in memory and resumes the ones that were unloaded. Sends no messages, opens no turns, costs no tokens."
+  }
+}

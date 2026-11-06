@@ -1,4 +1,6 @@
-# dsh-session-keeper
+# 会话巡检（dsh-session-keeper）
+
+> 插件页显示名「会话巡检」，来自包内 `locale/zh.json` 的 `meta.title`（英文界面显示 Session Keeper）；包名和各项标识仍是 `dsh-session-keeper`。
 
 DSH 插件：**让指定的会话一直活在内存里。**
 
@@ -16,7 +18,7 @@ QQ 桥（`dsh-qq-bridge`）投递消息前只调 `ctx.agents.get(id)`，拿不�
 
 ```json
 "dependencies": {
-  "dsh-session-keeper": "https://gitee.com/<你的仓库>/repository/archive/<ref>.tar.gz"
+  "dsh-session-keeper": "https://gitee.com/zhuminming/dsh-session-keeper/repository/archive/master.tar.gz"
 }
 ```
 
@@ -24,9 +26,11 @@ QQ 桥（`dsh-qq-bridge`）投递消息前只调 `ctx.agents.get(id)`，拿不�
 
 改完关掉 DSH，跑 `pnpm install`，再打开。
 
+**装完必须重启**：profile 的 bundle 列表只在启动时合成，运行中热装任何新 bundle 都会报 `operation-error / next is not a function`，重启后才正常。
+
 ## 设置页
 
-装好后在 DSH 的「设置 → 会话保活」里，直接改：
+装好后在 DSH 的「设置 → 会话巡检」里，直接改：
 
 - 总开关
 - 检查间隔（分钟）
