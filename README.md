@@ -46,5 +46,4 @@ QQ 桥投递消息前只调 `ctx.agents.get(id)`，拿不到就放弃，回一�
 ## 做不到的
 
 - **只保证“在内存里”，不保证“回消息”**——正在跑的轮次唤不醒。
-- `resume` 要不要 `agentOptions`、DSH 会不会自己回收闲置 agent，都没验证过，所以 `agentOptions` 做成可选。
-- 只在装了 `ctx.agents` 服务的宿主上有意义。
+- `resume` 是否真需要 `agentOptions`、DSH 会不会自己回收闲置 agent，都没实测，所以前者做成可选。
